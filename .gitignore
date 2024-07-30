@@ -1,0 +1,7 @@
+
+**/training/workdir
+**/training/input
+images/
+.venv
+model.onnx
+
