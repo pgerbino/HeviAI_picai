@@ -39,3 +39,6 @@ for output validation https://vscode.dev/github/pgerbino/HeviAI_picai/blob/main/
 
 run https://vscode.dev/github/pgerbino/HeviAI_picai/blob/main/AbdomenMRUS-prostate-segmentation/training/whole_gland_seg_archive.py#L274 tp create mha settings
 run https://vscode.dev/github/pgerbino/HeviAI_picai/blob/main/AbdomenMRUS-prostate-segmentation/training/prepare_data.py#L85 after to create the required nnunet archive
+
+whats going on here 
+https://vscode.dev/github/pgerbino/HeviAI_picai/blob/main/AbdomenMRUS-prostate-segmentation/.venv/lib/python3.8/site-packages/nnunet/training/network_training/nnUNetTrainer.py#L516

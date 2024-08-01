@@ -8,7 +8,7 @@ from matplotlib.animation import FuncAnimation
 # original segmentation
 file_path = '/home/piero/Downloads/prostate158/prostate158_train/train/020/t2_anatomy_reader1.nii.gz'
 # validation raw for 20
-file_path = '/home/piero/Downloads/uunet/results/nnUNet/3d_fullres/Task2202_prostate_segmentation/nnUNetTrainerV2_Loss_FL_and_CE_checkpoints__nnUNetPlansv2.1/all/validation_raw/020_020.nii.gz'
+# file_path = '/home/piero/Downloads/uunet/results/nnUNet/3d_fullres/Task2202_prostate_segmentation/nnUNetTrainerV2_Loss_FL_and_CE_checkpoints__nnUNetPlansv2.1/all/validation_raw/020_020.nii.gz'
 img = nib.load(file_path)
 
 # Get the image data as a numpy array
