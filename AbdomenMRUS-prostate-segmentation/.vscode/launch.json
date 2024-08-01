@@ -11,7 +11,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args" :["3d_fullres" ,"nnUNetTrainerV2_Loss_FL_and_CE_checkpoints" ,"Task2202_prostate_segmentation", "0"],
+            "args" :["3d_fullres" ,"nnUNetTrainerV2_Loss_FL_and_CE_checkpoints" ,"Task2202_prostate_segmentation", "all"],
             "env" : {
                 "nnUNet_raw_data_base":"/home/piero/Downloads/uunet",
                 "nnUNet_preprocessed":"/home/piero/Downloads/uunet/nnUNet_preprocessed",
