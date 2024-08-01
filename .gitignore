@@ -5,3 +5,4 @@ images/
 .venv
 model.onnx
 
+AbdomenMRUS-prostate-segmentation/nifti_animation.gif
