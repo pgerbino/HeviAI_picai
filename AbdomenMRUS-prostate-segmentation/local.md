@@ -28,3 +28,10 @@ need to copy files into teh nnunet tree
 
 Here we can see the data and export an onnx representation
 .venv/lib/python3.8/site-packages/nnunet/network_architecture/generic_UNet.py:401
+
+Reduce all processing to bare min to analyse how the network works
+alot of it is hard coded
+look at just one case
+amend (../../../../../Downloads/uunet/mha2nnunet_settings/Task2202_prostate_segmentation.json)
+for epoch run https://vscode.dev/github/pgerbino/HeviAI_picai/blob/main/AbdomenMRUS-prostate-segmentation/.venv/lib/python3.8/site-packages/nnunet/training/network_training/nnUNetTrainerV2.py#L48
+for iterations https://vscode.dev/github/pgerbino/HeviAI_picai/blob/main/AbdomenMRUS-prostate-segmentation/.venv/lib/python3.8/site-packages/nnunet/training/network_training/network_trainer.py#L100
