@@ -36,3 +36,6 @@ amend (../../../../../Downloads/uunet/mha2nnunet_settings/Task2202_prostate_segm
 for epoch run https://vscode.dev/github/pgerbino/HeviAI_picai/blob/main/AbdomenMRUS-prostate-segmentation/.venv/lib/python3.8/site-packages/nnunet/training/network_training/nnUNetTrainerV2.py#L48
 for iterations https://vscode.dev/github/pgerbino/HeviAI_picai/blob/main/AbdomenMRUS-prostate-segmentation/.venv/lib/python3.8/site-packages/nnunet/training/network_training/network_trainer.py#L100
 for output validation https://vscode.dev/github/pgerbino/HeviAI_picai/blob/main/AbdomenMRUS-prostate-segmentation/.venv/lib/python3.8/site-packages/nnunet/training/network_training/nnUNetTrainer.py#L604
+
+run https://vscode.dev/github/pgerbino/HeviAI_picai/blob/main/AbdomenMRUS-prostate-segmentation/training/whole_gland_seg_archive.py#L274 tp create mha settings
+run https://vscode.dev/github/pgerbino/HeviAI_picai/blob/main/AbdomenMRUS-prostate-segmentation/training/prepare_data.py#L85 after to create the required nnunet archive

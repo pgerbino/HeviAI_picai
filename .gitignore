@@ -6,3 +6,5 @@ images/
 model.onnx
 
 AbdomenMRUS-prostate-segmentation/nifti_animation.gif
+
+.history/
