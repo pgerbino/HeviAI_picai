@@ -35,3 +35,4 @@ look at just one case
 amend (../../../../../Downloads/uunet/mha2nnunet_settings/Task2202_prostate_segmentation.json)
 for epoch run https://vscode.dev/github/pgerbino/HeviAI_picai/blob/main/AbdomenMRUS-prostate-segmentation/.venv/lib/python3.8/site-packages/nnunet/training/network_training/nnUNetTrainerV2.py#L48
 for iterations https://vscode.dev/github/pgerbino/HeviAI_picai/blob/main/AbdomenMRUS-prostate-segmentation/.venv/lib/python3.8/site-packages/nnunet/training/network_training/network_trainer.py#L100
+for output validation https://vscode.dev/github/pgerbino/HeviAI_picai/blob/main/AbdomenMRUS-prostate-segmentation/.venv/lib/python3.8/site-packages/nnunet/training/network_training/nnUNetTrainer.py#L604

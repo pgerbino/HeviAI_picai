@@ -29,13 +29,11 @@ https://github.com/DIAGNijmegen/picai_prep
 if 'inputdir' in os.environ:
     inputdir = Path(os.environ['inputdir'])
 else:
-    # inputdir = Path("/media/pelvis/data/prostate-MRI/")
-    inputdir = Path("/home/piero/Downloads/")
+    inputdir = Path("/media/pelvis/data/prostate-MRI/")
 if 'workdir' in os.environ:
     workdir = Path(os.environ['workdir'])
 else:
-    # workdir = Path("/media/pelvis/projects/joeran/picai/workdir")
-    workdir = Path("/home/piero/Downloads/uunet")
+    workdir = Path("/media/pelvis/projects/joeran/picai/workdir")
 
 # settings
 task = "Task2202_prostate_segmentation"
@@ -61,25 +59,25 @@ def preprocess_annotation(lbl: sitk.Image) -> sitk.Image:
     return lbl_new
 
 
-# if nnUNet_dataset_json_path.exists():
-#     print(f"Found dataset.json at {nnUNet_dataset_json_path}, skipping..")
-# else:
-# read preprocessing settings and set the annotation preprocessing function
-with open(mha2nnunet_settings_path) as fp:
-    mha2nnunet_settings = json.load(fp)
+if nnUNet_dataset_json_path.exists():
+    print(f"Found dataset.json at {nnUNet_dataset_json_path}, skipping..")
+else:
+    # read preprocessing settings and set the annotation preprocessing function
+    with open(mha2nnunet_settings_path) as fp:
+        mha2nnunet_settings = json.load(fp)
 
-if not "options" in mha2nnunet_settings:
-    mha2nnunet_settings["options"] = {}
-mha2nnunet_settings["options"]["annotation_preprocess_func"] = preprocess_annotation
+    if not "options" in mha2nnunet_settings:
+        mha2nnunet_settings["options"] = {}
+    mha2nnunet_settings["options"]["annotation_preprocess_func"] = preprocess_annotation
 
-# prepare dataset in nnUNet format
-archive = MHA2nnUNetConverter(
-    output_dir=nnUNet_raw_data_path,
-    scans_dir=inputdir,
-    annotations_dir=inputdir,
-    mha2nnunet_settings=mha2nnunet_settings,
-)
-archive.convert()
-archive.create_dataset_json()
+    # prepare dataset in nnUNet format
+    archive = MHA2nnUNetConverter(
+        output_dir=nnUNet_raw_data_path,
+        scans_dir=inputdir,
+        annotations_dir=inputdir,
+        mha2nnunet_settings=mha2nnunet_settings,
+    )
+    archive.convert()
+    archive.create_dataset_json()
 
 print("Finished.")
