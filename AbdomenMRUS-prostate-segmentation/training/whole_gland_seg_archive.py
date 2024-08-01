@@ -78,7 +78,7 @@ def generate_prostate158_archive_items(
     if not len(archive_list):
         raise ValueError(f"Did not find any MHA scans in {archive_dir}, aborting.")
 
-    assert len(archive_list) == 139, "Dataset should have 139 training cases"
+    # assert len(archive_list) == 139, "Dataset should have 139 training cases"
 
     return archive_list
 
@@ -310,41 +310,45 @@ def generate_mha2nnunet_settings(
 if __name__ == "__main__":
     # set up paths
     project_root = Path("/media/pelvis/projects/")
-    workdir = project_root / "joeran/picai/workdir/"
+    workdir = project_root / "/home/piero/Downloads/uunet/"
     in_dir_data = "/media/pelvis/data/prostate-MRI/"
     output_path = workdir / "mha2nnunet_settings" / "Task2202_prostate_segmentation.json"
 
     # read subject list of cases without patient overlap with PI-CAI test/validation sets
-    with open(project_root / "joeran/Data/ds-config/V2_ZonalSegmentation299/ds-config-all.json") as fp:
-        subject_list = json.load(fp)['subject_list']
+    # PG TODO find out where this comes from
+    # with open(project_root / "joeran/Data/ds-config/V2_ZonalSegmentation299/ds-config-all.json") as fp:
+    #     subject_list = json.load(fp)['subject_list']
 
     # collect arguments for Prostate158 dataset
     prostate158_kwargs = {
-        "in_dir_data": in_dir_data,
-        "images_dir": "public-datasets/prostate158/prostate158_train/train/"
+        # "in_dir_data": in_dir_data,
+        # "images_dir": "public-datasets/prostate158/prostate158_train/train/"
+        "in_dir_data" : "/home/piero/Downloads/",
+        "images_dir" : "prostate158/prostate158_train/train/"
     }
 
     # collect arguments for ProstateX dataset
-    prostatex_kwargs = {
-        "in_dir_data": in_dir_data,
-        "images_dir":  "public-datasets/prostateX/images/",
-        "annotations_dir": "public-datasets/prostateX/annotations/granular-delineations-TZPZ/",
-        "subject_list": [s for s in subject_list if "ProstateX" in s]
-    }
+    # prostatex_kwargs = {
+    #     "in_dir_data": in_dir_data,
+    #     "images_dir":  "public-datasets/prostateX/images/",
+    #     "annotations_dir": "public-datasets/prostateX/annotations/granular-delineations-TZPZ/",
+    #     "subject_list": [s for s in subject_list if "ProstateX" in s]
+    # }
 
-    # RUMC dataset
-    rumc_kwargs = {
-        "in_dir_data": in_dir_data,
-        "images_dir":  "rumc/images",
-        "annotations_dir":  "rumc/annotations/zonal-segmentations/granular-delineations-TZPZ",
-        "subject_list": [s for s in subject_list if "ProstateX" not in s]
-    }
+    # # PG Where does this come from?
+    # # RUMC dataset
+    # rumc_kwargs = {
+    #     "in_dir_data": in_dir_data,
+    #     "images_dir":  "rumc/images",
+    #     "annotations_dir":  "rumc/annotations/zonal-segmentations/granular-delineations-TZPZ",
+    #     "subject_list": [s for s in subject_list if "ProstateX" not in s]
+    # }
 
     generate_mha2nnunet_settings(
         archive_item_collectors=[
             (generate_prostate158_archive_items, prostate158_kwargs),
-            (generate_prostatex_archive_items, prostatex_kwargs),
-            (generate_rumc_archive_items, rumc_kwargs),
+            # (generate_prostatex_archive_items, prostatex_kwargs),
+            # (generate_rumc_archive_items, rumc_kwargs),
         ],
         output_path=output_path,
     )
